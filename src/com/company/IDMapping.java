@@ -12,6 +12,14 @@ public class IDMapping {
 
     public static void main(String[] args) throws ScriptException, IOException {
 
+
+        // parameter for nearest neighbor search
+        String indexpath="/Volumes/My Book/WikipediaDaten Word2vec/wiki.angular.annoy100";
+        Integer entityId=794610; //794610 parkinson
+        Integer n=10000;
+        Integer k=10;
+
+
         BufferedReader reader = new BufferedReader(new FileReader(
                 String.format("%s/WikiEmbeddingsEntity.csv", DIR)));
 
@@ -26,7 +34,7 @@ public class IDMapping {
 
         // start calculate time
         long startTime = System.currentTimeMillis();
-        ProcessBuilder pb = new ProcessBuilder("python", py, "794610"); //794610 parkinson
+        ProcessBuilder pb = new ProcessBuilder("python", py, indexpath, String.valueOf(entityId), String.valueOf(n), String.valueOf(k));
         pb.directory(new File(cmd));
         pb.redirectError();
         Process p = pb.start();
