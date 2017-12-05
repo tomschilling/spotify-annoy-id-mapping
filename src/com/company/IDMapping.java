@@ -1,4 +1,4 @@
-package annoy_mapping;
+package com.company;
 
 import javax.script.ScriptException;
 import java.io.*;
