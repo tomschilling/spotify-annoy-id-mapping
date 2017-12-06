@@ -1,4 +1,4 @@
-package com.company;
+package IdMapping;
 
 import javax.script.ScriptException;
 import java.io.*;
@@ -16,25 +16,25 @@ public class IDMapping {
         // parameter for nearest neighbor search
         String indexpath="/Volumes/My Book/WikipediaDaten Word2vec/wiki.angular.annoy100";
         Integer entityId=794610; //794610 parkinson
-        Integer n=10000;
-        Integer k=10;
+        Integer k=10000; //search_k nodes
+        Integer n=10; //closest items to return
 
 
         BufferedReader reader = new BufferedReader(new FileReader(
                 String.format("%s/WikiEmbeddingsEntity.csv", DIR)));
 
         String line = "";
-        List<String> entities = new ArrayList<>(); //entities.get(a)
+        List<String> entities = new ArrayList<>();
         while ((line = reader.readLine()) != null) {
             entities.add(line);
         }
 
-        String cmd="/Users/Tom/IdeaProjects/utitlities/src/annoy_mapping/";
+        String cmd = new File("src/idmapping/").getAbsolutePath();
         String py="getNearest.py";
 
         // start calculate time
         long startTime = System.currentTimeMillis();
-        ProcessBuilder pb = new ProcessBuilder("python", py, indexpath, String.valueOf(entityId), String.valueOf(n), String.valueOf(k));
+        ProcessBuilder pb = new ProcessBuilder("python", py, indexpath, String.valueOf(entityId), String.valueOf(k) , String.valueOf(n));
         pb.directory(new File(cmd));
         pb.redirectError();
         Process p = pb.start();
