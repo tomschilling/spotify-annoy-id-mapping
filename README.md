@@ -4,7 +4,7 @@
 
 1. Please clone or download this repository
 2. Get the [spotiy/annoy](https://github.com/spotify/annoy) python package from [PyPI](https://pypi.python.org/pypi/annoy)
-
+- if you have [Python Package Index](https://pypi.python.org/pypi) installed, run `sudo pip install annoy`
 
 ## How it works
 
