@@ -1,11 +1,11 @@
-package BuildIndex;
+package BuildAnnoyIndex;
 
 import javax.script.ScriptException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class BuildIndex {
+public class BuildAnnoyIndex {
 
     public static void main(String[] args) throws ScriptException, IOException {
 
@@ -17,7 +17,7 @@ public class BuildIndex {
         Integer trees = 100; //trees for building the index
 
 
-        String cmd = new File("src/buildindex/").getAbsolutePath();
+        String cmd = new File("src/buildannoyindex/").getAbsolutePath();
         String py = "build.py";
 
         ProcessBuilder pb = new ProcessBuilder("python", py, inputfile, String.valueOf(dimensions), metric, String.valueOf(trees), annoyIndex);

@@ -8,7 +8,7 @@
 
 ## How it works
 
-1. Build your annoy index with `BuildIndex`  
+1. Build your annoy index with `BuildAnnoyIndex`  
 2. Give the `indexpath` to the created annoy index for nearest neighbor search
 2. How many search nodes do you want for `k` ( see [*Tradeoffs*](https://github.com/spotify/annoy#tradeoffs))
 3. Give a `n` for how many results you want to get back as closest items
