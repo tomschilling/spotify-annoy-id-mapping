@@ -8,7 +8,8 @@ import java.util.List;
 
 public class IDMapping {
 
-    private static final String DIR = "/Volumes/My Book/WikipediaDaten Word2vec/";
+    //Give the path to the
+    //private static final String DIR = "/Volumes/My Book/WikipediaDaten Word2vec/";
 
     public static void main(String[] args) throws ScriptException, IOException {
 
@@ -18,11 +19,9 @@ public class IDMapping {
         Integer entityId=794610; //794610 parkinson
         Integer k=10000; //search_k nodes
         Integer n=10; //closest items to return
+        String entitiesfile = "/Volumes/My Book/WikipediaDaten Word2vec/WikiEmbeddingsEntity.csv"; //csv file where the entities are stored
 
-
-        BufferedReader reader = new BufferedReader(new FileReader(
-                String.format("%s/WikiEmbeddingsEntity.csv", DIR)));
-
+        BufferedReader reader = new BufferedReader(new FileReader(entitiesfile));
         String line = "";
         List<String> entities = new ArrayList<>();
         while ((line = reader.readLine()) != null) {
