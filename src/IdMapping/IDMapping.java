@@ -10,13 +10,14 @@ public class IDMapping {
 
     public static void main(String[] args) throws ScriptException, IOException {
 
+        String path = new File("/data/").getAbsolutePath();
 
         // parameter for nearest neighbor search
-        String indexpath="/Volumes/My Book/WikipediaDaten Word2vec/wiki.angular.annoy100";
-        Integer entityId=794610; //794610 parkinson
+        String indexpath= path + "annoy.angular.index";
+        Integer entityId=10; //794610 parkinson
         Integer k=10000; //search_k nodes
         Integer n=10; //closest items to return
-        String entitiesfile = "/Volumes/My Book/WikipediaDaten Word2vec/WikiEmbeddingsEntity.csv"; //csv file where the entities are stored
+        String entitiesfile = path + "entities.csv"; //csv file where the entities are stored
 
         BufferedReader reader = new BufferedReader(new FileReader(entitiesfile));
         String line = "";
