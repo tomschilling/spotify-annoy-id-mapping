@@ -17,9 +17,9 @@
 0.08,  -0.37,  -0.63,  -0.58,  -0.44,  -0.74,  -0.35,  -0.02,  0.48,  -0.50,  -0.20,  0.26,  -0.59,  0.72,  0.15,  0.07,  0.52,  0.42,  0.67,  1.04,  -0.25,  0.17,  0.06,  0.14,  0.14,  0.40,  0.14,  0.28,  -0.47,  0.19,  -0.83,  -0.45,  0.44,  0.40,  -0.10,  -0.21,  0.89,  -0.38,  -0.09,  0.05,  -0.16,  0.65,  -0.09,  0.69,  -0.31,  -0.22,  -0.41,  0.79,  -0.70,  1.39,  0.40,  -0.48,  -0.55,  -0.23,  -0.22,  0.86,  0.25,  0.17,  -0.01,  -0.31,  -0.47,  -0.07,  -0.03,  -0.36,  0.50,  0.52,  0.03,  -0.85,  -0.27,  -0.17,  0.36,  0.42,  0.21,  0.45,  -0.03,  0.98,  -0.59,  0.39,  0.51,  0.18,  -0.40,  -0.89,  0.14,  0.23,  0.48,  0.08,  0.34,  -0.14,  -0.13,  1.09,  -0.58,  -0.16,  0.89,  -0.64,  0.28,  -0.10,  0.21,  -0.04,  -0.06,  0.31
 ```
 
-2. Give the `indexpath` to the created annoy index for nearest neighbor search
+2. Give the `indexpath` in `ÌdMapping` to the created annoy index for nearest neighbor search
 2. How many search nodes do you want for `k` ( see [*Tradeoffs*](https://github.com/spotify/annoy#tradeoffs))
-3. Give a `n` for how many results you want to get back as closest items
+3. Give a `n` for how many results you want to get back as the closest items
 
 ## Where is the loaded index stored? 
 
