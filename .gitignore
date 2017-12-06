@@ -7,7 +7,7 @@
 *.iml
 
 # data files
-*data/
+git stat*data/
 
 # Log file
 *.log
