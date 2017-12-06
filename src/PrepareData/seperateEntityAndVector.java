@@ -7,12 +7,12 @@ public class seperateEntityAndVector {
 
     public static void main(String[] args) throws IOException {
 
-        String importFile = new File("/data/EntitiesAndEmbeddings.csv").getAbsolutePath();
+        String path = new File("data").getAbsolutePath();
 
-        String path = new File("/data/").getAbsolutePath();
-        FileWriter vectorWriter = new FileWriter(path + "vector.csv");
-        FileWriter entityWriter = new FileWriter(path + "entities.csv");
+        FileWriter vectorWriter = new FileWriter(path + "/glove300dVector.csv");
+        FileWriter entityWriter = new FileWriter(path + "/glove300dEntities.csv");
 
+        String importFile = path + "/glove300d.csv";
 
         String line = "";
         try (BufferedReader br = new BufferedReader(new FileReader(importFile))) {

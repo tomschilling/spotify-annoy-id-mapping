@@ -9,12 +9,12 @@ public class BuildAnnoyIndex {
 
     public static void main(String[] args) throws ScriptException, IOException {
 
-        String path = new File("/data/").getAbsolutePath();
+        String path = new File("data").getAbsolutePath();
 
         //Please set paremeter for building an AnnoyIndex
-        String inputfile = path + "vector.csv";
-        String annoyIndex = path + "annoy.angular.index";
-        Integer dimensions = 100; //dimentions of vectors in inputfile
+        String inputfile = path + "/glove300dVector.csv";
+        String annoyIndex = path + "/annoy.angular.glove";
+        Integer dimensions = 300; //dimentions of vectors in inputfile
         String metric = "angular"; //distance for building the index (eg. angular or euclidean)
         Integer trees = 100; //trees for building the index
 
@@ -26,6 +26,7 @@ public class BuildAnnoyIndex {
         pb.directory(new File(cmd));
         pb.redirectError();
         Process p = pb.start();
+        //pb.start();
 
         InputStream is = null;
         String s = "";

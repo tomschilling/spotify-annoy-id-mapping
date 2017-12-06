@@ -10,14 +10,16 @@ public class IDMapping {
 
     public static void main(String[] args) throws ScriptException, IOException {
 
-        String path = new File("/data/").getAbsolutePath();
+        String path = new File("data").getAbsolutePath();
 
         // parameter for nearest neighbor search
-        String indexpath= path + "annoy.angular.index";
-        Integer entityId=10; //794610 parkinson
-        Integer k=10000; //search_k nodes
+        String indexpath= path + "/annoy.angular.glove";
+        Integer dimensions=300; //dimentions of vectors in index
+        String metric = "angular"; //distance for building the index (eg. angular or euclidean)
+        Integer entityId=13716; //parkinson
+        Integer k=100; //search_k nodes
         Integer n=10; //closest items to return
-        String entitiesfile = path + "entities.csv"; //csv file where the entities are stored
+        String entitiesfile = path + "/glove300dEntities.csv"; //csv file where the entities are stored
 
         BufferedReader reader = new BufferedReader(new FileReader(entitiesfile));
         String line = "";
@@ -31,7 +33,7 @@ public class IDMapping {
 
         // start calculate time
         long startTime = System.currentTimeMillis();
-        ProcessBuilder pb = new ProcessBuilder("python", py, indexpath, String.valueOf(entityId), String.valueOf(k) , String.valueOf(n));
+        ProcessBuilder pb = new ProcessBuilder("python", py, indexpath, String.valueOf(entityId), String.valueOf(k) , String.valueOf(n), String.valueOf(dimensions), metric);
         pb.directory(new File(cmd));
         pb.redirectError();
         Process p = pb.start();
@@ -58,7 +60,7 @@ public class IDMapping {
         long duration = (endTime - startTime);
         System.out.println("Execution time: " + String.valueOf(duration) + "ms");
         for (Integer a : result) {
-            System.out.println(entities.get(a));
+            System.out.println(entities.get(a -1)); //TODO: -1 is a bug fix, actually it should work without
         }
     }
 }

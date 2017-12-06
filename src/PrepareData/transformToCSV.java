@@ -7,13 +7,13 @@ public class transformToCSV {
 
     public static void main(String[] args) throws IOException {
 
-        String path = new File("/data/").getAbsolutePath();
+        String path = new File("data").getAbsolutePath();
 
-        FileWriter writer = new FileWriter(path + "EntitiesAndEmbeddings.csv");
-        FileWriter counter = new FileWriter(path + "RecordCounter.txt");
+        FileWriter writer = new FileWriter(path + "/glove300d.csv");
+        FileWriter counter = new FileWriter(path + "/RecordCounter.txt");
 
 
-        String file = "/Volumes/My Book/wikiner/Word2VecEncoder_en_150_Wiki+minlc_20170309.txt";
+        String file = path + "/glove.6B.300d.txt";
 
             Integer i = 0;
             String line = "";
