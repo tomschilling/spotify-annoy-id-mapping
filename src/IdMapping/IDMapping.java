@@ -8,9 +8,6 @@ import java.util.List;
 
 public class IDMapping {
 
-    //Give the path to the
-    //private static final String DIR = "/Volumes/My Book/WikipediaDaten Word2vec/";
-
     public static void main(String[] args) throws ScriptException, IOException {
 
 
